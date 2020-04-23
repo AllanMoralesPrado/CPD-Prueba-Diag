@@ -1,0 +1,22 @@
+DESARROLLO PRUEBA DE DIAGNÓSTICO DE COMPUTACIÓN PARALELA Y DISTRIBUIDA
+Alumno: Allan Morales Prado
+
+Pregunta 2: Diseño consulta para BDD
+
+SELECT courses.name AS nombre_del_curso,
+courses.start_date AS inicio_curso,
+AVG(evaluations.score) AS promedio_de_notas,
+STDEVP(evaluations.score) AS desviacion_estandar,
+MIN(evaluations.score) AS nota_minima,
+MAX(evaluations.score) AS nota_maxima
+FROM courses c, evaluations e, exams i
+WHERE c.pk = i.pk AND i.pk = e.pk
+GROUP BY courses.name, courses.start_date  
+
+Pregunta 3: ¿En qué consiste la exclusión mutua?
+
+Es una de las condiciones que se dan en un sistema que experimenta un interbloqueo de procesos (aquellos que no dejan de ejecutarse jamás impidiendo que otros puedan hacerlo por mala gestión de los recursos del sistema) y consiste en que un conjunto de procesos no puede utilizar el mismo recurso (o bien la misma instancia de un recurso) prestado al mismo tiempo, entonces un proceso debe esperar a que el otro lo desocupe primero.
+
+Pregunta 4: ¿Qué es un socket?
+
+Elemento de comunicación (proceso) que posee cada máquina de una red cliente-servidor que permite una comunicación de datos en tiempo real a través de una API, identificando cada nodo con direcciones IP, protocolos de transporte y números de puerto. 
